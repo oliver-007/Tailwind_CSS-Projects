@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="o_tailwind.css" />
+    <title>DarkToggle</title>
+  </head>
+  <body>
+    <div
+      class="h-screen flex justify-center items-center bg-white text-gray-600 dark:bg-gray-800 dark:text-orange-600"
+    >
+      <span class="mr-4">Light</span>
+
+      <label for="toggle">
+        <input
+          type="checkbox"
+          id="toggle"
+          class="relative h-32 w-64 appearance-none bg-zinc-700 checked:bg-zinc-400 rounded-full transition duration-500"
+        />
+      </label>
+
+      <span class="ml-4">Dark</span>
+    </div>
+
+    <script>
+      const checkbox = document.querySelector("#toggle");
+      const html = document.querySelector("html");
+
+      darkToggle = () => {
+        checkbox.checked
+          ? html.classList.add("dark")
+          : html.classList.remove("dark");
+      };
+      darkToggle();
+
+      checkbox.addEventListener("click", darkToggle);
+    </script>
+  </body>
+</html>

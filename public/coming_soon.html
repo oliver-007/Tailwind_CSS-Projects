@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="o_tailwind.css" />
+    <title>Coming_soon_Petals</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+      integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="antialiased font-primary">
+    <div class="bg_home px-8">
+      <div
+        class="flex flex-col py-12 justify-between min-h-screen md:max-w-2xl lg:max-w-3xl mx-auto"
+      >
+        <div>
+          <!-- Contdown timer starts -->
+          <div class="flex flex-wrap justify-center gap-4">
+            <div class="timer_circle">
+              <div>
+                <span id="day" class="timer_count">00</span
+                ><span class="timer_type">Days</span>
+              </div>
+            </div>
+            <div class="timer_circle">
+              <div>
+                <span id="hour" class="timer_count">00</span
+                ><span class="timer_type">Hours</span>
+              </div>
+            </div>
+            <div class="timer_circle">
+              <div>
+                <span id="minute" class="timer_count">00</span
+                ><span class="timer_type">Minutes</span>
+              </div>
+            </div>
+            <div class="timer_circle">
+              <div>
+                <span id="second" class="timer_count">00</span
+                ><span class="timer_type">Seconds</span>
+              </div>
+            </div>
+          </div>
+          <!-- Countdown timer ends -->
+          <div class="mt-8 text-white text-center">
+            <h1 class="font-bold text-4xl capitalize md:text-5xl">
+              project coming soon
+            </h1>
+            <p class="pt-4 text-lg md:text-xl">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. A
+              obcaecati porro provident? Quae eius obcaecati aliquid ullam nobis
+              totam explicabo facere eum consequatur cumque? Fugit perspiciatis
+              illum laborum temporibus. In.
+            </p>
+          </div>
+          <form
+            action=""
+            class="mt-8 md:flex md:max-w-lg lg:max-w-xl md:mx-auto"
+          >
+            <div class="relative flex-grow">
+              <input
+                type="email"
+                name=""
+                id="email"
+                placeholder="Email Address"
+                class="peer pt-5 pb-3 px-8 rounded-full w-full placeholder-transparent md:rounded-r-none focus:outline-none"
+              />
+              <label
+                for="email"
+                class="absolute text-gray-700 left-8 top-1 font-extrabold text-xs peer-placeholder-shown:top-5 peer-placeholder-shown:font-normal peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:font-extrabold peer-focus:text-xs peer-hover:top-1 peer-hover:font-extrabold peer-hover:text-xs cursor-text transition-all duration-300 tracking-widest"
+                >Email Address</label
+              >
+            </div>
+            <button
+              type="submit"
+              class="bg-pink-900 text-white uppercase font-bold px-8 py-4 mt-4 w-full rounded-full text-sm text-center md:rounded-l-none md:ml-1 md:mt-0 md:w-48 flex-grow-0"
+            >
+              submit
+            </button>
+          </form>
+        </div>
+
+        <footer class="mt-8">
+          <img
+            src=" images/logo.svg"
+            alt="logo"
+            class="h-10 opacity-80 mx-auto"
+          />
+          <div class="mx-auto mt-8 space-x-2 text-center text-pink-800 text-lg">
+            <a href="#" class="social_link">
+              <i class="fab fa-facebook-f m-auto"></i>
+            </a>
+            <a href="#" class="social_link">
+              <i class="fab fa-pinterest-p m-auto"></i>
+            </a>
+            <a href="#" class="social_link">
+              <i class="fab fa-twitter m-auto"></i>
+            </a>
+            <a href="#" class="social_link">
+              <i class="fab fa-instagram m-auto"></i>
+            </a>
+            <a href="#" class="social_link">
+              <i class="fab fa-linkedin-in m-auto"></i>
+            </a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      const countDown = () => {
+        const countDate = new Date("May 17 , 2025 00:00:00 ").getTime();
+        const now = new Date().getTime();
+        const gap = countDate - now;
+
+        const second = 1000;
+        const minute = second * 60;
+        const hour = minute * 60;
+        const day = hour * 24;
+
+        const textDay = Math.floor(gap / day);
+        const textHour = Math.floor((gap % day) / hour);
+        const textMinute = Math.floor((gap % hour) / minute);
+        const textSecond = Math.floor((gap % minute) / second);
+
+        document.getElementById("day").innerHTML = textDay;
+        document.getElementById("hour").innerHTML = textHour;
+        document.getElementById("minute").innerHTML = textMinute;
+        document.getElementById("second").innerHTML = textSecond;
+        console.log(gap);
+      };
+      setInterval(countDown, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="o_tailwind.css" />
+    <title>Floating Labels</title>
+  </head>
+  <body>
+    <div class="min-h-screen flex items-center justify-center text-3xl">
+      <div class="relative">
+        <input
+          type="text"
+          id="email"
+          placeholder="Email Address"
+          class="peer py-14 px-16 placeholder-transparent outline-none rounded-full shadow-gray-500 shadow-2xl"
+        />
+        <label
+          for="email"
+          class="absolute left-24 tracking-widest top-3 text-xl font-bold text-cyan-500 peer-placeholder-shown:top-14 peer-placeholder-shown:text-3xl peer-placeholder-shown:font-normal peer-focus:text-xl peer-focus:top-3 peer-focus:font-bold peer-hover:text-xl peer-hover:top-3 peer-hover:font-bold transition-all duration-300 cursor-text"
+          >Email Address :
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
